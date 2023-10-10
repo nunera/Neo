@@ -44,7 +44,7 @@ local WatermarkConnection = game:GetService('RunService').RenderStepped:Connect(
         FrameCounter = 0;
     end;
 
-    Library:SetWatermark(('Neo V%v| %s fps | %s ms'):format(V,
+    Library:SetWatermark(('Neo V%s| %s fps | %s ms'):format(V,
         math.floor(FPS),
         math.floor(game:GetService('Stats').Network.ServerStatsItem['Data Ping']:GetValue())
     ));
@@ -73,7 +73,7 @@ SaveManager:IgnoreThemeSettings()
 SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
 
 ThemeManager:SetFolder('Neo')
-SaveManager:SetFolder('Neo/Saves/'..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+SaveManager:SetFolder('Neo/Saves/'..GameId)
 
 SaveManager:BuildConfigSection(Tabs['Settings'])
 ThemeManager:ApplyToTab(Tabs['Settings'])
