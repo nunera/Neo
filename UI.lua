@@ -3,8 +3,13 @@ getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
 getgenv().tweenService = game:GetService"TweenService"
 
+if getgenv().library then
+    getgenv().library:Unload()
+end
+
 local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "uwuware", open = false, mousestate = inputService.MouseIconEnabled, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "uw_configs", fileext = ".uw"}
-getenv().library = library
+getgenv().library = library
+
 --Locals
 local dragging, dragInput, dragStart, startPos, dragObject
 
@@ -2772,3 +2777,4 @@ library.ConfigSection:AddButton({text = "Delete", callback = function()
         end
     end
 end})
+--LIBRARY END
