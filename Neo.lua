@@ -15,7 +15,27 @@ local osdate = os.date
 local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/nunera/Neo/main/UI/Library.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/nunera/Neo/main/UI/SaveManager.lua"))()
 local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/nunera/Neo/main/UI/ThemeManager.lua"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/nunera/Neo/main/Libraries/Aimbot/Aimbot.lua"))()
+local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/nunera/Neo/main/Libraries/ESP/ESP.lua"))()
 
+local ESP_DeveloperSettings = ESP.DeveloperSettings
+local ESP_Settings = ESP.Settings
+local ESP_Properties = ESP.Properties
+local Crosshair = ESP_Properties.Crosshair
+local CenterDot = Crosshair.CenterDot
+
+local Aimbot_DeveloperSettings = Aimbot.DeveloperSettings
+local Aimbot_Settings = Aimbot.Settings
+local Aimbot_FOV = Aimbot.FOVSettings
+
+ESP_Settings.LoadConfigOnLaunch = false
+ESP_Settings.Enabled = false
+Crosshair.Enabled = false
+Aimbot_Settings.Enabled = false
+
+local Fonts = {"UI", "System", "Plex", "Monospace"}
+local TracerPositions = {"Bottom", "Center", "Mouse"}
+local HealthBarPositions = {"Top", "Bottom", "Left", "Right"}
 local Window = UI:CreateWindow({
     Title = "Neo - V"..V,
     Center = true,
@@ -25,7 +45,10 @@ local Window = UI:CreateWindow({
 })
 
 local Tabs = {
-    Main = Window:AddTab('Main'),
+    ['General'] = Window:AddTab('General'),
+    ['AimbotTab'] = Window:AddTab('Aimbot'),
+    ['ESP'] = Window:AddTab('ESP'),
+    ['Crosshair'] = Window:AddTab('Crosshair')
     ['Settings'] = Window:AddTab('Settings')
 }
 
