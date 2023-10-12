@@ -21,8 +21,6 @@ local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/nunera
 local ESP_DeveloperSettings = ESP.DeveloperSettings
 local ESP_Settings = ESP.Settings
 local ESP_Properties = ESP.Properties
-local Crosshair = ESP_Properties.Crosshair
-local CenterDot = Crosshair.CenterDot
 
 local Aimbot_DeveloperSettings = Aimbot.DeveloperSettings
 local Aimbot_Settings = Aimbot.Settings
@@ -30,7 +28,6 @@ local Aimbot_FOV = Aimbot.FOVSettings
 
 ESP_Settings.LoadConfigOnLaunch = false
 ESP_Settings.Enabled = false
-Crosshair.Enabled = false
 Aimbot_Settings.Enabled = false
 
 local Fonts = {"UI", "System", "Plex", "Monospace"}
@@ -48,7 +45,7 @@ local Tabs = {
     ['General'] = Window:AddTab('General'),
     ['AimbotTab'] = Window:AddTab('Aimbot'),
     ['ESP'] = Window:AddTab('ESP'),
-    ['Crosshair'] = Window:AddTab('Crosshair')
+    ['Crosshair'] = Window:AddTab('Crosshair'),
     ['Settings'] = Window:AddTab('Settings')
 }
 
@@ -108,4 +105,3 @@ ThemeManager:ApplyToTab(Tabs['Settings'])
 
 SaveManager:LoadAutoloadConfig()
 getgenv().Neo = true
-
